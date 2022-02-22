@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js"></script>
+    <title>Document 2</title>
+</head>
+<body>
+    <div id="app"></div>
+    <script type="text/babel">
+        class Pet extends React.Component {
+            render() {
+                return (
+                    <div>
+                        <h2>Moxie</h2>
+                        <img src="https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=685&q=80" alt="milano"/>
+                    </div>
+                )
+            }
+        }
+        ReactDOM.render(<Pet/>, document.getElementById("app"));
+    </script>
+</body>
+</html>
