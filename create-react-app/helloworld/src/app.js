@@ -3,7 +3,6 @@ import Pet from './pet';
 
 function App() {
         return (<Pet/>)
-    
 }
 
 export default App;
