@@ -1,12 +1,12 @@
-import Recipe from './Recipe';
+import Nav from './nav';
+import RecipeList from './RecipeList';
+import "./RecipeApp.css";
 
 function RecipeApp() {
   return (
     <div className="App">
-      <Recipe 
-      title="Pasta" 
-      ingredients={['Flour', 'Water']}
-      />
+      <Nav />
+      <RecipeList />
     </div>
   );
 }

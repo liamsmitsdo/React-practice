@@ -1,15 +1,38 @@
+import React, {Component} from 'react';
+import PropTypes from 'prop-types';
+import "./Recipe.css"
 
-function Recipe(props) {
-    return(
-        <div>
-            <h2>Recipe {props.title}</h2>
-            <ul>
-               {props.ingredients.map(function(ing, idx) {
-                    return <li key={idx}>{ing}</li>
-                })}
-            </ul>
+class Recipe extends Component {
+    static propTypes = {
+        title: PropTypes.string.isRequired,
+        ingredients: PropTypes.arrayOf(PropTypes.string).isRequired,
+        instructions: PropTypes.string.isRequired,
+        img: PropTypes.string.isRequired
+    }
+
+    render() {
+        const {title, img, instructions} = this.props;
+        const ingredients = this.props.ingredients.map((ing,idx) => {
+            return <li key={idx}>{ing}</li>
+        })
+
+        return (
+            <div className="recipe-card">
+            <div className="recipe-img">
+                <img src={img} alt={title}/>
+            </div>
+            <div className="recipe-body">
+                <h3 className="recipe-title">{title}</h3>
+                <h4>Ingredients:</h4>
+                <ul>
+                    {ingredients}
+                </ul>
+                <h4>Instructions:</h4>
+                <p>{instructions}</p>
+            </div>
         </div>
-    )
+        )
+    }
 }
 
 export default Recipe;
