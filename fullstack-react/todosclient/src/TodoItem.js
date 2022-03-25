@@ -1,10 +1,15 @@
 
 const TodoItem = ({name, completed, onDelete, onToggle}) => (
-    <li className="task">
-        <span onClick={onToggle} className={completed ? 'done' : ''}>
-            {name}
-        </span>
-        <span onClick={onDelete} className="delete">X</span>
+    <li>
+      <span
+       style={{
+           textDecoration: completed? 'line-through': 'none'
+       }}
+       onClick={onToggle}
+      >
+       {name}
+      </span>
+      <span onClick={onDelete}> X </span>
     </li>
 )
 
