@@ -5,7 +5,7 @@ export async function getTodos() {
         .then(res => {
             if (!res.ok) {
                 if (res.status >= 400 && res.status < 500) {
-                    return res.json().them(data => {
+                    return res.json().then(data => {
                         let err = {errorMessage: data.message};
                         throw err;
                     })
